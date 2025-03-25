@@ -1,0 +1,16 @@
+<%= form_with model: @event do |form| %>
+
+    <div>
+        <%= form.label :title, "Title" %>
+        <%= form.text_field :title, default: "Prepopulated Value", size: 20 %>
+    </div><br> 
+    <div>
+        <%= form.label :location, "Location" %>
+        <%= form.text_field :location, default: "Prepopulated Value", size: 20 %>
+    </div><br>    
+    <div>
+        <%= form.label :date, "Date" %>
+        <%= form.date_field :date %>
+        <%= form.submit %>
+    </div>    
+<% end %>
