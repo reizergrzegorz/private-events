@@ -3,6 +3,7 @@
 <% @events.each do |event| %>
     <div>   
         <p>Title: <%= event.title %></p>
+        <p>Creator: <%= event.creator.email %></p>
         <p>Location: <%= event.location %></p>
         <p>Date: <%= event.date %></p>
     </div><br>
