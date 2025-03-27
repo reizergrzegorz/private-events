@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     get "users/sign_out" => "users/sessions#destroy"
   end
   resources :events
+  resources :users
 end
