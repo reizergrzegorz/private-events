@@ -8,3 +8,10 @@
         <p>Date: <%= event.date %></p>
     </div><br>
 <% end %>
+
+<% if user_signed_in? %>
+    <p>Create a new event <%= link_to "here", new_event_path %></p>
+    <p>Sign out <%= link_to "here", destroy_user_session_path, method: :delete %></p>
+<% else %>
+    <p>Sign in <%= link_to "here", user_session_path %></p>
+<% end %>
