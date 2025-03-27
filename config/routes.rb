@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
   root "events#index"
+  devise_for :users
+  devise_scope :user do
+    get "users/sign_out" => "users/sessions#destroy"
+  end
   resources :events
 end
