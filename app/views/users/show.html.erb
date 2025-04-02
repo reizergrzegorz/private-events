@@ -9,10 +9,17 @@
     </div><br>
 <% end %>
 
-<p><strong>Attended Events</strong></p>
-<% @attended_events.each do |event| %>
+<p><strong>Upcoming Events</strong></p>
+<% @upcoming_events.each do |event| %>
     <div>
         <p><%= link_to event.title, event %></p>  
     </div><br>
 <% end %>    
+
+<p><strong>Past Events</strong></p>
+<% @past_events.each do |event| %>
+    <div>
+        <p><%= link_to event.title, event %></p>  
+    </div><br>
+<% end %>   
 
