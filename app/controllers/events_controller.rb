@@ -24,6 +24,19 @@ class EventsController < ApplicationController
         @event = Event.find(params[:id])
     end 
     
+    def attend
+        @event = Event.find(params[:id])
+        
+        # Prevent user from attending the event more than once
+        if @event.attendees.exclude?(current_user)
+          @event.attendees << current_user
+          flash[:notice] = "You are now attending this event."
+        else
+          flash[:alert] = "You are already attending this event."
+        end
+    
+        redirect_to events_path
+      end
     private
 
     def event_params
