@@ -31,4 +31,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_151630) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "attendances", "events"
+  add_foreign_key "attendances", "users"
 end
