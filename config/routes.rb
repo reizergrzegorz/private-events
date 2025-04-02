@@ -6,5 +6,11 @@ Rails.application.routes.draw do
   end
   root "events#index"
   resources :events
+  resources :events do
+    post 'attend', on: :member
+  end
+  resources :events do
+    get 'attend', on: :member
+  end
   resources :users, only: [:show]
 end
